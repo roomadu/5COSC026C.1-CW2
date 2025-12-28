@@ -3,6 +3,7 @@
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+
 }
 
 .logo {
@@ -41,6 +42,7 @@
   color: #888;
 }
 
+<<<<<<< Updated upstream
 :root{
   --bg: #0f172a;
   --card: #0b1220;
@@ -129,3 +131,24 @@ input{
 .greeting{margin-top:10px;color:var(--accent);font-weight:600}
 
 .app-footer{text-align:center;color:var(--muted);margin-top:6px}
+=======
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+
+.card {
+  border: 1px solid #ccc;
+  padding: 15px;
+}
+
+.card img {
+  width: 100%;
+}
+.card h3 {
+  margin-top: 0;
+}
+
+>>>>>>> Stashed changes
