@@ -1,11 +1,11 @@
 import PropertyCard from "./PropertyCard";
 import "./PropertyList.css";
 
-function PropertyList({ properties }) {
+function PropertyList({ properties, addFavourite }) {
   return (
     <div className="grid">
       {properties.map(p => (
-        <PropertyCard key={p.id} property={p} />
+        <PropertyCard key={p.id} property={p} addFavourite={addFavourite} />
       ))}
     </div>
   );
