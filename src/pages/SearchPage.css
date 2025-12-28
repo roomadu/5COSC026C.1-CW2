@@ -1,0 +1,6 @@
+.search-page {
+  max-width: 1000px;
+  margin: 0 auto;        /* centers horizontally */
+  padding: 20px;
+  text-align: center;    /* centers text */
+}
