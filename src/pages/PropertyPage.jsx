@@ -17,10 +17,8 @@ function PropertyPage() {
   return (
     <div className="property-page">
       <h2>{property.type} · £{property.price.toLocaleString()}</h2>
-      
-      {/* Use picture from JSON */}
       <img src={property.picture} alt={property.type} />
-      
+      <img src="images/prop1.jpg" />
       <p><strong>Id:</strong> {property.id}</p>
       <p><strong>Bedrooms:</strong> {property.bedrooms}</p>
       <p><strong>Tenure:</strong> {property.tenure}</p>
