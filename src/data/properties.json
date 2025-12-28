@@ -8,7 +8,15 @@
             "tenure": "Freehold",
             "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland.",
             "location": "Petts Wood Road, Petts Wood, Orpington BR5",
-            "picture": "/images/prop1.jpg",
+            "picture": "/images/house1.jpg",
+            "images": [
+                "/images/house1pic1.jpg",
+                "/images/house1pic2.jpg",
+                "/images/house1pic3.jpg",
+                "/images/house1pic4.jpg",
+                "/images/house1pic5.jpg",
+                "/images/house1pic6.jpg"
+            ],
             "url": "properties/prop1.html",
             "added": {
                 "month": "October",
@@ -26,6 +34,14 @@
             "location": "Crofton Road, Orpington BR6",
             "picture": "/images/flat1.jpg",
             "url": "properties/prop2.html",
+            "images": [
+                "/images/flat1pic1.jpg",
+                "/images/flat1pic2.jpg",
+                "/images/flat1pic3.jpg",
+                "/images/flat1pic4.jpg",
+                "/images/flat1pic5.jpg",
+                "/images/flat1pic6.jpg"
+            ],
             "added": {
                 "month": "September",
                 "day": 14,
@@ -40,8 +56,16 @@
             "tenure": "Freehold",
             "description": "Spacious four bedroom detached house offering modern interiors, a large garden and off-street parking. Ideal for growing families.",
             "location": "Chislehurst Road, Bromley BR7",
-            "picture": "/images/prop2.jpg",
+            "picture": "/images/house2.jpg",
             "url": "properties/prop3.html",
+            "images": [
+                "/images/house2pic1.jpg",
+                "/images/house2pic2.jpg",
+                "/images/house2pic3.jpg",
+                "/images/house2pic4.jpg",
+                "/images/house2pic5.jpg",
+                "/images/house2pic6.jpg"
+            ],
             "added": {
                 "month": "August",
                 "day": 5,
@@ -58,6 +82,14 @@
             "location": "High Street, Bromley BR1",
             "picture": "/images/flat2.jpg",
             "url": "properties/prop4.html",
+            "images": [
+                "/images/flat2pic1.jpg",
+                "/images/flat2pic2.jpg",
+                "/images/flat2pic3.jpg",
+                "/images/flat2pic4.jpg",
+                "/images/flat2pic5.jpg",
+                "/images/flat2pic6.jpg"
+            ],
             "added": {
                 "month": "July",
                 "day": 22,
@@ -72,8 +104,16 @@
             "tenure": "Freehold",
             "description": "Luxury five bedroom detached property with landscaped garden, double garage and high-end finishes throughout.",
             "location": "Oakwood Avenue, Sevenoaks TN13",
-            "picture": "/images/prop3.jpg",
+            "picture": "/images/house3.jpg",
             "url": "properties/prop5.html",
+            "images": [
+                "/images/house3pic1.jpg",
+                "/images/house3pic2.jpg",
+                "/images/house3pic3.jpg",
+                "/images/house3pic4.jpg",
+                "/images/house3pic5.jpg",
+                "/images/house3pic6.jpg"
+            ],
             "added": {
                 "month": "June",
                 "day": 10,
@@ -90,6 +130,14 @@
             "location": "Station Road, Greenwich SE10",
             "picture": "/images/flat3.jpg",
             "url": "properties/prop6.html",
+            "images": [
+                "/images/flat3pic1.jpg",
+                "/images/flat3pic2.jpg",
+                "/images/flat3pic3.jpg",
+                "/images/flat3pic4.jpg",
+                "/images/flat3pic5.jpg",
+                "/images/flat3pic6.jpg"
+            ],
             "added": {
                 "month": "May",
                 "day": 18,
@@ -104,8 +152,16 @@
             "tenure": "Freehold",
             "description": "Charming two bedroom terraced house featuring a private garden, renovated interiors and convenient access to local schools and amenities.",
             "location": "Maple Close, Sidcup DA14",
-            "picture": "/images/prop4.jpg",
+            "picture": "/images/house4.jpg",
             "url": "properties/prop7.html",
+            "images": [
+                "/images/house4pic1.jpg",
+                "/images/house4pic2.jpg",
+                "/images/house4pic3.jpg",
+                "/images/house4pic4.jpg",
+                "/images/house4pic5.jpg",
+                "/images/house4pic6.jpg"
+            ],
             "added": {
                 "month": "April",
                 "day": 2,
