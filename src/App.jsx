@@ -1,13 +1,15 @@
-import { Routes, Route } from "react-router-dom";
-import SearchPage from "./pages/SearchPage.jsx";
-import PropertyPage from "./pages/PropertyPage.jsx";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import SearchPage from "./pages/SearchPage";
+import PropertyPage from "./pages/PropertyPage";
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<SearchPage />} />
-      <Route path="/property/:id" element={<PropertyPage />} />
-    </Routes>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<SearchPage />} />
+        <Route path="/property/:id" element={<PropertyPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
 
