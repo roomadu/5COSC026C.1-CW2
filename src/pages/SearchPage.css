@@ -1,6 +1,57 @@
 .search-page {
-  max-width: 1000px;
-  margin: 0 auto;        /* centers horizontally */
+  max-width: 1100px;
+  margin: 0 auto;
+  padding-bottom: 40px;
+}
+
+/* Banner */
+.search-banner {
+  background-image: url("/images/cover.jpg");
+  background-size: cover;
+  background-position: center;
+  border-radius: 16px;
+  margin: 20px 0 40px;
+  padding: 60px 20px;
+  position: relative;
+}
+
+.search-banner-overlay {
+  background: rgba(255, 255, 255, 0.92);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 30px;
+  border-radius: 14px;
+}
+
+.search-banner h1 {
+  margin-bottom: 20px;
+  text-align: center;
+  color: #161616;
+}
+
+/* Main content layout: properties + favourites sidebar */
+.content-layout {
+  display: grid;
+  grid-template-columns: 3fr 1fr; /* 3:1 ratio */
+  gap: 20px;
   padding: 20px;
-  text-align: center;    /* centers text */
+}
+
+
+/* Property list styling (left side) */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+
+
+/* Responsive layout for smaller screens (below iPad landscape 1024px) */
+@media (max-width: 1024px) {
+  .content-layout {
+    grid-template-columns: 1fr; /* single column layout */
+  }
+
+
 }
