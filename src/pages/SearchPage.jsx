@@ -43,11 +43,13 @@ function SearchPage({ favourites, addFavourite, removeFavourite, clearFavourites
         </div>
       </section>
 
-      {/* MAIN CONTENT */}
-      <section className="properties-section">
-        <div className="main-content">
-          {/* Property results */}
-          <PropertyList properties={results} addFavourite={addFavourite} favourites={favourites} />
+<section id="properties-section" className="properties-section">
+  <div className="main-content">
+    <PropertyList
+      properties={results}
+      addFavourite={addFavourite}
+      favourites={favourites}
+    />
 
           {/* Favourites sidebar */}
           <Favourites
