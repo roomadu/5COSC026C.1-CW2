@@ -1,21 +1,25 @@
-.search-form-card {
-  background-color: #fff;
-  padding: 20px;
-  border-radius: 12px;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
-  margin-bottom: 30px;
-}
 
-.search-form-card .MuiTextField-root {
-  margin-bottom: 16px;
+.search-form-card input,
+.search-form-card select {
+  background-color: #c6f3fc;
+  color: black;
+  padding: 10px;
+  font-size: 15px;
+  border-radius: 20px;
+  width: 80%;
+  border: none;
 }
 
 .search-form-card button {
-  background-color: #0d6efd;
+  background-color:  #41cce7;
   color: #fff;
   font-weight: bold;
-  padding: 12px 0;
-  border-radius: 8px;
+  padding: 12px;
+  border-radius: 15px;
+  width: 35%;;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
   transition: all 0.3s ease;
 }
 
@@ -28,7 +32,7 @@
   .search-form-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
+    gap: 16px;
   }
 
   .search-form-grid button {
