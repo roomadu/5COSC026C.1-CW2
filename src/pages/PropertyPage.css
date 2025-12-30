@@ -4,25 +4,52 @@
   padding: 20px;
   background-color: #fff;
   border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
   text-align: center;
   font-family: Arial, sans-serif;
 }
 
 .property-page h2 {
-  color: #0d6efd;
+  color: #41cce7;
   margin-bottom: 20px;
   font-size: 28px;
 }
 
-.property-page img {
+/* MAIN IMAGE ONLY */
+.main-image {
   width: 100%;
+  max-width: 700px;
   max-height: 400px;
   object-fit: cover;
   border-radius: 10px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
+/* THUMBNAIL CONTAINER */
+.thumbnails {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 25px;
+  flex-wrap: wrap;
+}
+
+/* THUMBNAIL IMAGES */
+.thumbnails img {
+  width: 120px;
+  height: 90px;
+  object-fit: cover;
+  border-radius: 6px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: border-color 0.2s ease;
+}
+
+.thumbnails img:hover {
+  border-color: #41cce7;
+}
+
+/* TEXT */
 .property-page p {
   font-size: 16px;
   color: #333;
