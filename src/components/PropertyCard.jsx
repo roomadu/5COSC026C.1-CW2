@@ -1,22 +1,34 @@
-
 import { Link } from "react-router-dom";
+import { FaHeart } from "react-icons/fa";
 import "./PropertyCard.css";
 
-function PropertyCard({ property, addFavourite }) {
-    return (
-        <div className="card">
-            <img src={property.picture} alt="" />
-            <h3>£{property.price.toLocaleString()}</h3>
-            <p>{property.type} · {property.bedrooms} beds</p>
-            <p>{property.location}</p>
+function PropertyCard({ property, addFavourite, favourites = [] }) {
+  const isFavourite = favourites.some(f => f.id === property.id);
 
-            <button onClick={() => addFavourite(property)}>
-                ❤ Favourite
-            </button>
+  // Safely format the price
+  const formattedPrice = property.price ? Number(property.price).toLocaleString() : "0";
 
-            <Link to={`/property/${property.id}`}>View Details</Link>
-        </div>
-    );
+  return (
+    <div className="card">
+      {/* Image container with favourite icon */}
+      <div className="image-container">
+        <img src={property.picture} alt={property.type} />
+        <FaHeart
+          className={`favourite-icon ${isFavourite ? "added" : ""}`}
+          onClick={() => addFavourite(property)}
+        />
+      </div>
+
+      {/* Property info */}
+      <h3>£{formattedPrice}</h3>
+      <p>{property.type} · {property.bedrooms} {property.bedrooms > 1 ? "bedrooms" : "bedroom"}</p>
+
+      {/* Link to detailed property page */}
+      <Link to={`/property/${property.id}`} className="view-details">
+        View Details
+      </Link>
+    </div>
+  );
 }
 
 export default PropertyCard;
