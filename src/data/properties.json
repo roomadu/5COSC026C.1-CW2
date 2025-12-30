@@ -6,7 +6,7 @@
             "bedrooms": 3,
             "price": 750000,
             "tenure": "Freehold",
-            "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland.",
+            "description": "Attractive three bedroom semi-detached family home situated within 0.5 miles of Petts Wood station with fast trains to London and within easy walking distance of local shops, schools, bus routes and National Trust woodland. The property comprises; two receptions, fitted 18'9 x 10'1 kitchen/breakfast room and conservatory. The property also benefits from having a utility room and cloakroom. To the first floor there are three bedrooms and a family bathroom with separate WC. Additional features include double glazing, gas central heating and a well presented interior...",
             "location": "Petts Wood Road, Petts Wood, Orpington BR5",
             "picture": "/images/house1.jpg",
             "images": [
@@ -18,6 +18,7 @@
                 "/images/house1pic6.jpg"
             ],
             "url": "properties/prop1.html",
+            "floorPlan": "/floorplans/house1-floorplan.png",
             "added": {
                 "month": "October",
                 "day": 12,
@@ -30,7 +31,7 @@
             "bedrooms": 2,
             "price": 399995,
             "tenure": "Freehold",
-            "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom garden flat with open plan living and private courtyard.",
+            "description": "Presented in excellent decorative order throughout is this two double bedroom, two bathroom, garden flat. <br>The modern fitted kitchen is open plan to the living room which boasts solid wooden floors and includes integrated appliances including a dishwasher & a washing machine. This large open plan benefits from bi folding doors onto a secluded private courtyard garden. Both bedrooms are double sized, and the family bathroom boasts a matching three piece suite a shower attachment over the bath. There is also a separate wet room. There are walnut doors throughout and wiring for Sky TV/aerial points in the living room/kitchen and both bedrooms.<br>This apartment being only five years old, is still under a 10 year building guarantee...",
             "location": "Crofton Road, Orpington BR6",
             "picture": "/images/flat1.jpg",
             "url": "properties/prop2.html",
@@ -42,6 +43,7 @@
                 "/images/flat1pic5.jpg",
                 "/images/flat1pic6.jpg"
             ],
+            "floorPlan": "/floorplans/flat1-floorplan.png",
             "added": {
                 "month": "September",
                 "day": 14,
@@ -54,7 +56,7 @@
             "bedrooms": 4,
             "price": 925000,
             "tenure": "Freehold",
-            "description": "Spacious four bedroom detached house offering modern interiors, a large garden and off-street parking. Ideal for growing families.",
+            "description": "Spacious four bedroom detached house offering modern interiors, a large garden, and off-street parking. The ground floor comprises a generous lounge with bay windows, a dining room perfect for family meals, a modern fitted kitchen with integrated appliances and breakfast bar, and a utility room with cloakroom. Upstairs there are four bedrooms, including a master bedroom with ensuite bathroom, and a family bathroom with separate WC. The property benefits from gas central heating, double glazing, ample storage, and a well-maintained rear garden ideal for outdoor activities and entertaining guests.",
             "location": "Chislehurst Road, Bromley BR7",
             "picture": "/images/house2.jpg",
             "url": "properties/prop3.html",
@@ -66,6 +68,7 @@
                 "/images/house2pic5.jpg",
                 "/images/house2pic6.jpg"
             ],
+            "floorPlan": "/floorplans/house2-floorplan.png",
             "added": {
                 "month": "August",
                 "day": 5,
@@ -75,10 +78,10 @@
         {
             "id": "prop4",
             "type": "Flat",
-            "bedrooms": 1,
-            "price": 275000,
+            "bedrooms": 3,
+            "price": 550000,
             "tenure": "Leasehold",
-            "description": "Modern one bedroom apartment located close to transport links, shops and restaurants. Features open-plan living and secure entry.",
+            "description": "Modern three bedroom apartment situated in a prime location close to transport links, shops, and restaurants. The property features an open-plan living and dining area with floor-to-ceiling windows providing plenty of natural light, a fully fitted contemporary kitchen with integrated appliances, and a private balcony overlooking communal gardens. The master bedroom includes an ensuite shower room, with two additional double bedrooms and a family bathroom. Further benefits include secure entry system, video intercom, allocated parking space, and close proximity to schools and leisure facilities.",
             "location": "High Street, Bromley BR1",
             "picture": "/images/flat2.jpg",
             "url": "properties/prop4.html",
@@ -90,6 +93,7 @@
                 "/images/flat2pic5.jpg",
                 "/images/flat2pic6.jpg"
             ],
+            "floorPlan": "/floorplans/flat2-floorplan.png",
             "added": {
                 "month": "July",
                 "day": 22,
@@ -102,7 +106,7 @@
             "bedrooms": 5,
             "price": 1200000,
             "tenure": "Freehold",
-            "description": "Luxury five bedroom detached property with landscaped garden, double garage and high-end finishes throughout.",
+            "description": "A luxurious five bedroom detached house offering exceptional living space, landscaped gardens, and a double garage. The ground floor comprises a welcoming entrance hall, spacious lounge, dining room, study, and a fully fitted modern kitchen with breakfast area and high-end appliances. There is also a utility room and guest cloakroom. Upstairs, the master bedroom features a dressing area and ensuite bathroom, with four further bedrooms and two additional bathrooms. Additional features include gas central heating, double glazing, underfloor heating in bathrooms, and a beautifully maintained rear garden ideal for families and entertaining.",
             "location": "Oakwood Avenue, Sevenoaks TN13",
             "picture": "/images/house3.jpg",
             "url": "properties/prop5.html",
@@ -114,6 +118,7 @@
                 "/images/house3pic5.jpg",
                 "/images/house3pic6.jpg"
             ],
+            "floorPlan": "/floorplans/house3-floorplan.png",
             "added": {
                 "month": "June",
                 "day": 10,
@@ -123,10 +128,10 @@
         {
             "id": "prop6",
             "type": "Flat",
-            "bedrooms": 3,
-            "price": 550000,
+            "bedrooms": 1,
+            "price": 275000,
             "tenure": "Leasehold",
-            "description": "Bright and spacious three bedroom apartment with balcony, modern kitchen and excellent transport links. Ideal for professionals or small families.",
+            "description": "Bright and spacious one bedroom apartment situated in a convenient location with excellent transport links. The property features an open-plan living and dining area with a modern kitchen equipped with integrated appliances, a generous bedroom with fitted wardrobes, and a stylish bathroom with a shower over bath. The apartment also benefits from a private balcony with views of the surrounding area, secure entry system, allocated parking space, and easy access to local shops, cafes, and leisure facilities. Ideal for professionals or first-time buyers.",
             "location": "Station Road, Greenwich SE10",
             "picture": "/images/flat3.jpg",
             "url": "properties/prop6.html",
@@ -138,6 +143,7 @@
                 "/images/flat3pic5.jpg",
                 "/images/flat3pic6.jpg"
             ],
+            "floorPlan": "/floorplans/flat3-floorplan.png",
             "added": {
                 "month": "May",
                 "day": 18,
@@ -150,7 +156,7 @@
             "bedrooms": 2,
             "price": 485000,
             "tenure": "Freehold",
-            "description": "Charming two bedroom terraced house featuring a private garden, renovated interiors and convenient access to local schools and amenities.",
+            "description": "Charming two bedroom terraced house with modern interiors and private garden. The property comprises a welcoming lounge, dining area, fully fitted kitchen, and cloakroom on the ground floor. Upstairs are two double bedrooms and a family bathroom. The house benefits from gas central heating, double glazing, and a well-maintained rear garden. Ideally located close to local schools, shops, and transport links, this property is perfect for first-time buyers or small families seeking a comfortable and convenient home.",
             "location": "Maple Close, Sidcup DA14",
             "picture": "/images/house4.jpg",
             "url": "properties/prop7.html",
@@ -162,6 +168,7 @@
                 "/images/house4pic5.jpg",
                 "/images/house4pic6.jpg"
             ],
+            "floorPlan": "/floorplans/house4-floorplan.png",
             "added": {
                 "month": "April",
                 "day": 2,
