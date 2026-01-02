@@ -1,31 +1,31 @@
-/* ===== FAVOURITES PANEL ===== */
+/* Favourites Panel */
 .favourites-float {
-  width: 220px;                        
-  padding: 15px;
-  background-color: rgba(254, 254, 254, 0.85);  /* transparent light blue */
-  border-radius: 16px;
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+  width: 80%;
+  max-width: 220px;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.833);
+  border-radius: 18px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
   transition: transform 0.2s, box-shadow 0.2s;
+  top: 20px;
 }
 
 .favourites-float:hover {
   transform: translateY(-3px);
-  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 12px 28px rgba(0,0,0,0.2);
 }
 
-/* Panel heading */
 .favourites-float h3 {
   text-align: center;
-  color: #000000;                    
+  color: #000;
   font-size: 17px;
   margin-bottom: 12px;
-  border-bottom: 2px solid rgba(157, 215, 241, 0.6); /* semi-transparent border */
+  border-bottom: 2px solid rgba(157, 215, 241, 0.6);
   padding-bottom: 6px;
   font-weight: 600;
   letter-spacing: 0.5px;
 }
 
-/* Empty text */
 .empty {
   text-align: center;
   color: #555;
@@ -33,12 +33,11 @@
   font-size: 14px;
 }
 
-/* Individual favourite items */
 .favourite-item {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(168, 224, 255, 0.75);   /* slightly darker transparent blue */
+  background-color:  #c9e7eb;
   padding: 8px 12px;
   border-radius: 12px;
   margin-bottom: 10px;
@@ -47,19 +46,18 @@
 }
 
 .favourite-item:hover {
-  background-color: rgba(129, 212, 250, 0.85);   /* hover lighter transparent blue */
+  background-color:  #41cce7;
   transform: translateX(2px);
 }
 
-/* Text inside favourite items */
 .favourite-text {
   font-size: 14px;
-  color: #0b3c5d;                  
+  color: #0b3c5d;
   font-weight: 500;
   margin-right: 5px;
+  word-break: break-word;
 }
 
-/* Remove button */
 .remove-btn {
   background: none;
   border: none;
@@ -67,6 +65,9 @@
   font-size: 15px;
   color: #ff4c4c;
   padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: transform 0.2s;
 }
 
@@ -74,28 +75,27 @@
   transform: scale(1.2);
 }
 
-/* Clear favourites container */
 .clear-container {
   text-align: center;
-  margin-top: 10px;
+  margin-top: 12px;
+  padding-bottom: 10px;
 }
 
-/* Clear button */
 .clear-btn {
-  width: 100%;
-  margin-top: 8px;
-  background: rgba(26, 158, 219, 0.9);   /* semi-transparent blue */
-  color: white;
-  border: none;
-  padding: 8px 0;
-  border-radius: 12px;
+  background-color:  #41cce7;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 12px;
+  border-radius: 8px;
+  width: 50%;;
+  display: block;
+  margin: 0 auto;
   cursor: pointer;
-  font-size: 14px;
-  font-weight: 600;
   transition: all 0.3s ease;
+  border: none;
 }
 
 .clear-btn:hover {
-  background-color: rgba(21, 128, 179, 0.95); /* slightly darker hover */
+  background-color: #0e5d6d ;
   transform: scale(1.05);
 }
