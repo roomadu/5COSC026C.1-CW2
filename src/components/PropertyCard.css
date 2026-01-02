@@ -1,3 +1,4 @@
+/*Property Card */
 .card {
   position: relative;
   border: 1px solid #ddd;
@@ -11,9 +12,10 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin: 16px;
 }
 
-/* Image container for absolute icon */
+/* Image container */
 .image-container {
   position: relative;
 }
@@ -26,11 +28,11 @@
   margin-bottom: 12px;
 }
 
-/* Favourite icon on bottom-right of image */
+/* Favourite icon  */
 .favourite-icon {
   position: absolute;
-  bottom: 20px;  /* moved up from 8px to 20px */
-  right: 12px;   /* keep right position */
+  bottom: 25px;  
+  right: 12px;   
   font-size: 24px;
   color: #ffffff;
   cursor: pointer;
@@ -60,18 +62,22 @@
 
 /* View Details button */
 .card a {
-  display: inline-block;
-  text-decoration: none;
-  background-color: #41cce7;
+  background-color:  #41cce7;
   color: #fff;
-  padding: 10px 16px;
+  font-weight: bold;
+  padding: 8px 12px;
   border-radius: 8px;
-  transition: background-color 0.3s;
-  margin-top: 8px;
+  width: 48%;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  border: none;
+  text-decoration: none;
 }
 
 .card a:hover {
-  background-color: #084298;
+  background-color: #066d82;
 }
 
 /* Card hover effect */
