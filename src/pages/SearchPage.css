@@ -1,8 +1,7 @@
-/* Search Page*/
+/* ================= Search Page ================= */
 .search-page {
   max-width: 1280px;
   margin: 0 auto;
-  
 }
 
 /* Search banner */
@@ -11,9 +10,7 @@
   background-size: cover;
   background-position: center;
   border-radius: 18px;
-  margin-left: 22px;
-  margin-right: 22px;
-  margin-top: 20px;
+  margin: 20px 22px 0 22px;
   padding: 50px 40px;
 }
 
@@ -36,14 +33,13 @@
   color: #000;
 }
 
-/* Search Panels */
+/* Panels layout */
 .search-panels {
   display: grid;
   grid-template-columns: 2.4fr 1fr;
   gap: 50px;
   align-items: flex-start; 
 }
-
 
 /* Responsive */
 @media (max-width: 900px) {
@@ -54,4 +50,15 @@
   .search-title {
     font-size: 24px;
   }
+}
+
+/* Property list section */
+.properties-section {
+  margin: 40px 22px;
+}
+
+.main-content {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 25px;
 }
