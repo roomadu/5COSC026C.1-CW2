@@ -9,7 +9,7 @@ function PropertyList({ properties, addFavourite, favourites = [] }) {
           key={p.id}
           property={p}
           addFavourite={addFavourite}
-          favourites={favourites} // pass favourites to each card
+          favourites={favourites} 
         />
       ))}
     </div>
