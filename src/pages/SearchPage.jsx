@@ -7,16 +7,23 @@ import Footer from "../components/Footer.jsx";
 import data from "../data/properties.json";
 import "./SearchPage.css";
 
-function SearchPage({ favourites, addFavourite, removeFavourite, clearFavourites }) {
+function SearchPage() {
   const [properties, setProperties] = useState([]);
   const [results, setResults] = useState([]);
+
+  const [favourites, setFavourites] = useState(() => {
+    const saved = localStorage.getItem("favourites");
+    return saved ? JSON.parse(saved) : [];
+  });
 
   useEffect(() => {
     setProperties(data.properties);
     setResults(data.properties);
   }, []);
 
-
+  useEffect(() => {
+    localStorage.setItem("favourites", JSON.stringify(favourites));
+  }, [favourites]);
 
   function handleSearch(criteria) {
     const filtered = properties.filter(p => {
@@ -31,32 +38,56 @@ function SearchPage({ favourites, addFavourite, removeFavourite, clearFavourites
     setResults(filtered);
   }
 
+  const addFavourite = (property) => {
+    if (!favourites.some(f => f.id === property.id)) {
+      setFavourites([...favourites, property]);
+    }
+  };
+
+  const removeFavourite = (id) => {
+    setFavourites(favourites.filter(f => f.id !== id));
+  };
+
+  const clearFavourites = () => {
+    setFavourites([]);
+  };
+
   return (
     <div className="search-page">
       <Header />
 
-      {/* SEARCH SECTION */}
+      {/* Search Section*/}
       <section id="search-section" className="search-banner">
-        <div className="search-banner-overlay">
-          <h1>Find Your Perfect Property</h1>
-          <SearchForm onSearch={handleSearch} />
+        <div className="search-banner-inner">
+
+          <h1 className="search-title">Find Your Perfect Property</h1>
+
+          <div className="search-panels">
+           
+            <div className="search-panel">
+              <SearchForm onSearch={handleSearch} />
+            </div>
+
+            
+            <div className="favourites-panel">
+              <Favourites
+                favourites={favourites}
+                removeFavourite={removeFavourite}
+                clearFavourites={clearFavourites}
+              />
+            </div>
+          </div>
+
         </div>
       </section>
 
-<section id="properties-section" className="properties-section">
-  <div className="main-content">
-    <PropertyList
-      properties={results}
-      addFavourite={addFavourite}
-      favourites={favourites}
-    />
-
-          {/* Favourites sidebar */}
-          <Favourites
-            favourites={favourites}
+      {/* Property List */}
+      <section id="properties-section" className="properties-section">
+        <div className="main-content">
+          <PropertyList
+            properties={results}
             addFavourite={addFavourite}
-            removeFavourite={removeFavourite}
-            clearFavourites={clearFavourites}
+            favourites={favourites}
           />
         </div>
       </section>
