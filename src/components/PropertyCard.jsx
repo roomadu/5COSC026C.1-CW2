@@ -19,7 +19,7 @@ function PropertyCard({ property, addFavourite, favourites = [] }) {
         <img src={property.picture} alt={property.type} />
         <FaHeart
           className={`favourite-icon ${isFavourite ? "added" : ""}`}
-          data-testid="favourite-icon"   // <-- Added for test
+          data-testid="favourite-icon"   
           onClick={() => addFavourite(property)}
         />
       </div>
