@@ -1,10 +1,11 @@
-/* Search Form (Transparent) */
+/* ================= Search Form ================= */
 .search-form-card {
-  background: rgba(255, 255, 255, 0.771);
+  background: rgba(255, 255, 255, 0.77);
   border-radius: 18px;
   padding: 30px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
   max-width: 1200px;
+  margin: 0 auto;
 }
 
 .search-form-card input {
@@ -17,12 +18,11 @@
   border: none;
 }
 
-/* Custom Select */
+/* Custom dropdown */
 .custom-select-wrapper {
   position: relative;
   width: 93%;
   color: #5f6670;
-
 }
 
 .custom-select {
@@ -31,10 +31,9 @@
   background-color: #c9e7eb;
   cursor: pointer;
   user-select: none;
-  transition: background-color 0.3s, color 0.3s;
   position: relative;
+  transition: background-color 0.3s, color 0.3s;
 }
-
 
 .custom-select::after {
   content: "▼";
@@ -43,12 +42,10 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 15px;
-  color: #000000;
+  color: #000;
   pointer-events: none;
   transition: transform 0.3s;
 }
-
-
 
 .custom-select.open {
   background-color: #c9e7eb;
@@ -69,9 +66,8 @@
 .custom-option {
   padding: 10px;
   cursor: pointer;
+  text-align: center;
   transition: background-color 0.2s, color 0.2s;
-  text-align: center; 
-  min-width: 80%;  
 }
 
 .custom-option:hover {
@@ -84,7 +80,7 @@
   color: white;
 }
 
-/* Search Form Card Button */
+/* Button style */
 .search-form-card button {
   background-color: #41cce7;
   color: #fff;
@@ -95,8 +91,8 @@
   display: block;
   margin: 0 auto;
   cursor: pointer;
-  transition: all 0.3s ease;
   border: none;
+  transition: all 0.3s ease;
 }
 
 .search-form-card button:hover {
@@ -104,7 +100,7 @@
   transform: translateY(-2px);
 }
 
-/* Grid Layout*/
+/* Grid layout for inputs */
 @media (min-width: 600px) {
   .search-form-grid {
     display: grid;
@@ -114,6 +110,5 @@
 
   .search-form-grid button {
     grid-column: span 2;
-    
   }
 }
