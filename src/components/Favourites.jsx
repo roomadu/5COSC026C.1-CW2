@@ -1,6 +1,7 @@
 import "./Favourites.css";
 
 function Favourites({ favourites = [], removeFavourite, clearFavourites, allProperties, addFavourite }) {
+  /* Allow dropping properties into favourites */
   const handleDragOver = (e) => {
     e.preventDefault();
   };
@@ -26,7 +27,13 @@ function Favourites({ favourites = [], removeFavourite, clearFavourites, allProp
       ) : (
         <>
           {favourites.map((f) => (
-            <div key={f.id} className="favourite-item" data-testid={`favourite-${f.id}`}>
+            <div
+              key={f.id}
+              className="favourite-item"
+              data-testid={`favourite-${f.id}`}
+              draggable
+              onDragStart={(e) => e.dataTransfer.setData("favouriteId", f.id)}
+            >
               <span className="favourite-text">
                 {f.type} · £{f.price.toLocaleString()}
               </span>
