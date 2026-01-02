@@ -20,20 +20,19 @@
 /* Custom Select */
 .custom-select-wrapper {
   position: relative;
-  width: 92%;
+  width: 93%;
   color: #5f6670;
 
 }
 
 .custom-select {
-  padding: 10px 12px;
+  padding: 6px 8px;
   border-radius: 10px;
   background-color: #c9e7eb;
   cursor: pointer;
   user-select: none;
   transition: background-color 0.3s, color 0.3s;
   position: relative;
-  padding-right: 30px; 
 }
 
 
