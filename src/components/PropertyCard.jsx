@@ -3,26 +3,32 @@ import { FaHeart } from "react-icons/fa";
 import "./PropertyCard.css";
 
 function PropertyCard({ property, addFavourite, favourites = [] }) {
-  const isFavourite = favourites.some(f => f.id === property.id);
+  const isFavourite = favourites.some((f) => f.id === property.id);
 
- 
-  const formattedPrice = property.price ? Number(property.price).toLocaleString() : "0";
+  const formattedPrice = property.price
+    ? Number(property.price).toLocaleString()
+    : "0";
 
   return (
-    <div className="card">
-      {/* Image container with favourite icon */}
+    <div
+      className="card"
+      draggable
+      onDragStart={(e) => e.dataTransfer.setData("propertyId", property.id)}
+    >
       <div className="image-container">
         <img src={property.picture} alt={property.type} />
         <FaHeart
           className={`favourite-icon ${isFavourite ? "added" : ""}`}
-          data-testid="favourite-icon"   
+          data-testid="favourite-icon"   // <-- Added for test
           onClick={() => addFavourite(property)}
         />
       </div>
 
-      {/* Property info */}
       <h3>£{formattedPrice}</h3>
-      <p>{property.type} · {property.bedrooms} {property.bedrooms > 1 ? "bedrooms" : "bedroom"}</p>
+      <p>
+        {property.type} · {property.bedrooms}{" "}
+        {property.bedrooms > 1 ? "bedrooms" : "bedroom"}
+      </p>
       <Link to={`/property/${property.id}`} className="view-details">
         View Details
       </Link>
