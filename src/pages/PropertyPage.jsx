@@ -16,7 +16,7 @@ function PropertyPage() {
     const found = data.properties.find((p) => p.id === id);
     if (found) {
       setProperty(found);
-      setMainImage(found.images[0]);
+      setMainImage(found.images?.[0] || found.picture); // fallback if images missing
     }
   }, [id]);
 
@@ -42,7 +42,7 @@ function PropertyPage() {
               <img src={mainImage} alt={property.type} className="main-image" />
             </div>
             <div className="thumbnails">
-              {property.images.map((img, index) => (
+              {(property.images || [property.picture]).map((img, index) => (
                 <img
                   key={index}
                   src={img}
@@ -54,11 +54,17 @@ function PropertyPage() {
           </TabPanel>
 
           <TabPanel>
-            <p>{property.longDescription || property.description}</p>
+            {/* Render HTML tags safely */}
+            <div
+              className="property-description"
+              dangerouslySetInnerHTML={{ __html: property.longDescription || property.description }}
+            />
           </TabPanel>
 
           <TabPanel>
-            <img src={property.floorPlan} alt="Floor Plan" className="floor-plan" />
+            {property.floorPlan && (
+              <img src={property.floorPlan} alt="Floor Plan" className="floor-plan" />
+            )}
           </TabPanel>
 
           <TabPanel>
