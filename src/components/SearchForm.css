@@ -1,33 +1,111 @@
+/* Search Form (Transparent) */
+.search-form-card {
+  background: rgba(255, 255, 255, 0.771);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  max-width: 1200px;
+}
 
-.search-form-card input,
-.search-form-card select {
-  background-color: #c6f3fc;
+.search-form-card input {
+  background-color: #c9e7eb;
   color: black;
-  padding: 10px;
+  padding: 10px 12px;
   font-size: 15px;
-  border-radius: 20px;
-  width: 80%;
+  border-radius: 10px;
+  width: 85%;
   border: none;
 }
 
+/* Custom Select */
+.custom-select-wrapper {
+  position: relative;
+  width: 92%;
+  color: #5f6670;
+
+}
+
+.custom-select {
+  padding: 10px 12px;
+  border-radius: 10px;
+  background-color: #c9e7eb;
+  cursor: pointer;
+  user-select: none;
+  transition: background-color 0.3s, color 0.3s;
+  position: relative;
+  padding-right: 30px; 
+}
+
+
+.custom-select::after {
+  content: "▼";
+  position: absolute;
+  right: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 15px;
+  color: #000000;
+  pointer-events: none;
+  transition: transform 0.3s;
+}
+
+
+
+.custom-select.open {
+  background-color: #c9e7eb;
+  color: rgb(75, 72, 72);
+}
+
+.custom-options {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #c9e7eb;
+  z-index: 10;
+}
+
+.custom-option {
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+  text-align: center; 
+  min-width: 80%;  
+}
+
+.custom-option:hover {
+  background-color: #41cce7;
+  color: white;
+}
+
+.custom-option.selected {
+  background-color: #0e5d6d;
+  color: white;
+}
+
+/* Search Form Card Button */
 .search-form-card button {
-  background-color:  #41cce7;
+  background-color: #41cce7;
   color: #fff;
   font-weight: bold;
-  padding: 12px;
-  border-radius: 15px;
-  width: 35%;;
+  padding: 10px 1px;
+  border-radius: 8px;
+  width: 36%;
   display: block;
   margin: 0 auto;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: none;
 }
 
 .search-form-card button:hover {
-  background-color: #084298;
+  background-color: #0e5d6d;
   transform: translateY(-2px);
 }
 
+/* Grid Layout*/
 @media (min-width: 600px) {
   .search-form-grid {
     display: grid;
@@ -37,5 +115,6 @@
 
   .search-form-grid button {
     grid-column: span 2;
+    
   }
 }
