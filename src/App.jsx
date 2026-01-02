@@ -4,25 +4,25 @@ import SearchPage from "./pages/SearchPage";
 import PropertyPage from "./pages/PropertyPage";
 import "./App.css";
 
-
-
 function App() {
+  /* Stores favourite properties across the app */
   const [favourites, setFavourites] = useState([]);
 
+  /* Adds a property to favourites if it is not already added */
   const addFavourite = (property) => {
     setFavourites(prev =>
       prev.some(p => p.id === property.id) ? prev : [...prev, property]
     );
   };
 
+  /* Removes a property from favourites using its ID */
   const removeFavourite = (id) => {
     setFavourites(prev => prev.filter(p => p.id !== id));
   };
 
-  const clearFavourites = () => setFavourites([]);
-
   return (
     <Routes>
+      {/* Search and listing page */}
       <Route
         path="/"
         element={
@@ -30,11 +30,12 @@ function App() {
             favourites={favourites}
             addFavourite={addFavourite}
             removeFavourite={removeFavourite}
-            clearFavourites={clearFavourites}
+            clearFavourites={() => setFavourites([])}
           />
         }
       />
 
+      {/* Property page */}
       <Route
         path="/property/:id"
         element={
