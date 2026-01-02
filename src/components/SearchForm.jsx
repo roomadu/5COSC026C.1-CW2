@@ -2,8 +2,9 @@ import { useState } from "react";
 import "./SearchForm.css";
 
 function SearchForm({ onSearch }) {
+  /* State to store search criteria */
   const [type, setType] = useState("");
-  const [open, setOpen] = useState(false); // for dropdown
+  const [open, setOpen] = useState(false); // dropdown open/close
   const [minPrice, setMinPrice] = useState("");
   const [maxPrice, setMaxPrice] = useState("");
   const [minBeds, setMinBeds] = useState("");
@@ -11,6 +12,7 @@ function SearchForm({ onSearch }) {
 
   const options = ["Any Type", "House", "Flat"];
 
+  /* Handle form submission and pass criteria to parent */
   const submit = (e) => {
     e.preventDefault();
     onSearch({
@@ -22,6 +24,7 @@ function SearchForm({ onSearch }) {
     });
   };
 
+  /* Handle custom dropdown selection */
   const handleSelect = (value) => {
     setType(value === "Any Type" ? "" : value);
     setOpen(false);
@@ -29,7 +32,8 @@ function SearchForm({ onSearch }) {
 
   return (
     <form className="search-form-card search-form-grid" onSubmit={submit}>
-     
+      
+      {/* Property type custom dropdown */}
       <div className="custom-select-wrapper">
         <div
           className={`custom-select ${open ? "open" : ""}`}
@@ -37,6 +41,7 @@ function SearchForm({ onSearch }) {
         >
           {type || "Any Type"}
         </div>
+
         {open && (
           <div className="custom-options">
             {options.map((opt) => (
@@ -52,7 +57,7 @@ function SearchForm({ onSearch }) {
         )}
       </div>
 
-     
+      {/* Price and bedroom filters */}
       <input
         type="number"
         placeholder="Min Price (£)"
