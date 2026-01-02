@@ -1,17 +1,52 @@
+/* Header */
 .header {
-  background-color: #0d6efd; /* Blue */
-  color: white;
-  padding: 20px 0;
-  text-align: center;
+  background-color: #73d6ea;
+  padding: 30px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
 }
 
-.header img {
-  height: 60px;
-  margin-bottom: 8px;
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
 
-.header h2 {
+.header-left img {
+  height: 50px;
+}
+
+.header-left h2 {
   margin: 0;
-  font-size: 24px;
-  font-weight: 600;
+  font-size: 22px;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* Navigation Buttons */
+.header-nav {
+  display: flex;
+  gap: 20px;
+}
+
+.header-nav .nav-btn {
+  background: none;
+  border: none;
+  padding: 6px 12px;
+  font-size: 15px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.header-nav .nav-btn:hover {
+  color: #005d6d;
+}
+
+.header-nav .nav-btn:focus {
+  outline: none;
 }
