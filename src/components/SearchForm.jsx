@@ -61,8 +61,6 @@ function SearchForm({ onSearch }) {
       <input type="number" placeholder="Max Price (£)" value={maxPrice} onChange={(e) => setMaxPrice(e.target.value)} />
       <input type="number" placeholder="Min Bedrooms" value={minBeds} onChange={(e) => setMinBeds(e.target.value)} />
       <input type="number" placeholder="Max Bedrooms" value={maxBeds} onChange={(e) => setMaxBeds(e.target.value)} />
-
-      {/* Postcode and Date */}
       <input type="text" placeholder="Postcode" value={postcode} onChange={(e) => setPostcode(e.target.value)} />
       <input type="date" placeholder="Date Added" value={dateAdded} onChange={(e) => setDateAdded(e.target.value)} />
       <button type="submit">Search Properties</button>
