@@ -1,6 +1,26 @@
+import { useNavigate, useLocation } from "react-router-dom";
 import "./Header.css";
 
 function Header() {
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  const scrollToSection = (id) => {
+    const section = document.getElementById(id);
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
+  const goToSection = (sectionId) => {
+    if (location.pathname === "/") {
+      scrollToSection(sectionId);
+    } else {
+      navigate("/");
+      setTimeout(() => scrollToSection(sectionId), 150);
+    }
+  };
+
   return (
     <header className="header">
       <div className="header-left">
@@ -9,9 +29,20 @@ function Header() {
       </div>
 
       <nav className="header-nav">
-        {/* Scroll links to sections on SearchPage */}
-        <a href="/#search-section">Search Properties</a>
-        <a href="/#properties-section">Properties</a>
+        <button
+          className="nav-btn"
+          onClick={() => goToSection("search-section")}
+          aria-label="Go to Search Properties section"
+        >
+          Search Properties
+        </button>
+        <button
+          className="nav-btn"
+          onClick={() => goToSection("properties-section")}
+          aria-label="Go to Properties section"
+        >
+          Properties
+        </button>
       </nav>
     </header>
   );
