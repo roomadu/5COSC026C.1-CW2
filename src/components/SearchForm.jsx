@@ -20,13 +20,12 @@ function SearchForm({ onSearch }) {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Call onSearch only when Search button is clicked
     onSearch({
       type,
-      minPrice: Number(minPrice) || "",
-      maxPrice: Number(maxPrice) || "",
-      minBeds: Number(minBeds) || "",
-      maxBeds: Number(maxBeds) || "",
+      minPrice: minPrice ? Number(minPrice) : "",
+      maxPrice: maxPrice ? Number(maxPrice) : "",
+      minBeds: minBeds ? Number(minBeds) : "",
+      maxBeds: maxBeds ? Number(maxBeds) : "",
       postcode: postcode.trim(),
       dateAdded,
     });
@@ -57,7 +56,7 @@ function SearchForm({ onSearch }) {
         )}
       </div>
 
-      {/* Price and bedrooms */}
+      {/* Price inputs */}
       <input
         type="number"
         placeholder="Min Price (£)"
@@ -70,6 +69,8 @@ function SearchForm({ onSearch }) {
         value={maxPrice}
         onChange={(e) => setMaxPrice(e.target.value)}
       />
+
+      {/* Bedrooms inputs */}
       <input
         type="number"
         placeholder="Min Bedrooms"
