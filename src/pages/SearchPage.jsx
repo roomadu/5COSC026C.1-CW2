@@ -37,19 +37,24 @@ function SearchPage() {
   const handleSearch = (criteria) => {
     const filtered = properties.filter((p) => {
       const matchesType = !criteria.type || p.type === criteria.type;
+
       const matchesPrice =
         (!criteria.minPrice || p.price >= criteria.minPrice) &&
         (!criteria.maxPrice || p.price <= criteria.maxPrice);
-      const matchesBeds =
-        (!criteria.minBeds || p.bedrooms >= criteria.minBeds) &&
-        (!criteria.maxBeds || p.bedrooms <= criteria.maxBeds);
+
+      // Bedrooms
+      const minBeds = criteria.minBeds !== "" ? Number(criteria.minBeds) : 0;
+      const maxBeds = criteria.maxBeds !== "" ? Number(criteria.maxBeds) : Infinity;
+      const matchesBeds = p.bedrooms >= minBeds && p.bedrooms <= maxBeds;
+
+      // Postcode search (ignore spaces, case-insensitive)
       const matchesPostcode =
         !criteria.postcode ||
-        p.location.toLowerCase().startsWith(criteria.postcode.toLowerCase());
+        p.location.replace(/\s+/g, '').toLowerCase()
+         .includes(criteria.postcode.replace(/\s+/g, '').toLowerCase());
 
-      const propDate = `${p.added.year}-${monthMap[p.added.month]}-${String(
-        p.added.day
-      ).padStart(2, "0")}`;
+      // Date search
+      const propDate = `${p.added.year}-${monthMap[p.added.month]}-${String(p.added.day).padStart(2, "0")}`;
       const matchesDate = !criteria.dateAdded || propDate === criteria.dateAdded;
 
       return matchesType && matchesPrice && matchesBeds && matchesPostcode && matchesDate;
