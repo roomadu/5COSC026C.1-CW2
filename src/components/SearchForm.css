@@ -1,4 +1,4 @@
-/* ================= Search Form ================= */
+/* Search Form  */
 .search-form-card {
   background: rgba(255, 255, 255, 0.77);
   border-radius: 18px;
@@ -21,7 +21,7 @@
 /* Custom dropdown */
 .custom-select-wrapper {
   position: relative;
-  width: 93%;
+  width: 85%;
   color: #5f6670;
 }
 
