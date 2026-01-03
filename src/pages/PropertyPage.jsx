@@ -11,21 +11,41 @@ function PropertyPage() {
   const { id } = useParams();
   const [property, setProperty] = useState(null);
   const [mainImage, setMainImage] = useState("");
+  const [notFound, setNotFound] = useState(false);
 
   useEffect(() => {
     const found = data.properties.find((p) => p.id === id);
     if (found) {
       setProperty(found);
-      setMainImage(found.images?.[0] || found.picture); // fallback if images missing
+      setMainImage(found.images?.[0] || found.picture);
+      setNotFound(false);
+    } else {
+      setNotFound(true);
     }
   }, [id]);
 
-  if (!property) return <p>Loading...</p>;
+  if (notFound) return (
+    <>
+      <Header />
+      <div className="property-page">
+        <h2>Property not found</h2>
+        <p>The property you are looking for does not exist.</p>
+      </div>
+      <Footer />
+    </>
+  );
+
+  if (!property) return (
+    <>
+      <Header />
+      <div className="property-page"><p>Loading...</p></div>
+      <Footer />
+    </>
+  );
 
   return (
     <>
       <Header />
-
       <div className="property-page">
         <h2>{property.type} · £{property.price.toLocaleString()}</h2>
 
@@ -39,14 +59,18 @@ function PropertyPage() {
 
           <TabPanel>
             <div className="main-image-container">
-              <img src={mainImage} alt={property.type} className="main-image" />
+              <img 
+                src={mainImage} 
+                alt={`${property.type} main view`} 
+                className="main-image" 
+              />
             </div>
             <div className="thumbnails">
               {(property.images || [property.picture]).map((img, index) => (
                 <img
                   key={index}
                   src={img}
-                  alt={`${property.type} ${index + 1}`}
+                  alt={`${property.type} thumbnail ${index + 1}`}
                   onClick={() => setMainImage(img)}
                 />
               ))}
@@ -54,7 +78,6 @@ function PropertyPage() {
           </TabPanel>
 
           <TabPanel>
-            {/* Render HTML tags safely */}
             <div
               className="property-description"
               dangerouslySetInnerHTML={{ __html: property.longDescription || property.description }}
@@ -63,19 +86,20 @@ function PropertyPage() {
 
           <TabPanel>
             {property.floorPlan && (
-              <img src={property.floorPlan} alt="Floor Plan" className="floor-plan" />
+              <img src={property.floorPlan} alt={`${property.type} floor plan`} className="floor-plan" />
             )}
           </TabPanel>
 
           <TabPanel>
             <iframe
-              title="property-map"
+              title={`Map of ${property.type}`}
               src={`https://www.google.com/maps?q=${property.location}&output=embed`}
               width="100%"
               height="300"
               style={{ border: 0 }}
               allowFullScreen
               loading="lazy"
+              aria-label={`Map showing location of ${property.type}`}
             ></iframe>
           </TabPanel>
         </Tabs>
@@ -83,9 +107,13 @@ function PropertyPage() {
         <p><strong>Bedrooms:</strong> {property.bedrooms}</p>
         <p><strong>Tenure:</strong> {property.tenure}</p>
         <p><strong>Location:</strong> {property.location}</p>
-        <p><strong>Added on:</strong> {property.added.day} {property.added.month}, {property.added.year}</p>
+        <p>
+          <strong>Added on:</strong>{" "}
+          {property.added 
+            ? `${property.added.day} ${property.added.month}, ${property.added.year}`
+            : "N/A"}
+        </p>
       </div>
-
       <Footer />
     </>
   );
