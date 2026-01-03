@@ -1,16 +1,25 @@
-# React + Vite
+# My Details
+UoW ID- w2153576
+IIT ID- 20240341
+Name- Koongala Wickrama Roomadu Anjana
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-Currently, two official plugins are available:
+# Dream Properties App
+Estate Agent Client-side Web Application built using **React, Vite, HTML, CSS, and JavaScript**.  
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
-## React Compiler
+## Project Links
 
-The React Compiler is currently not compatible with SWC. See [this issue](https://github.com/vitejs/vite-plugin-react/issues/428) for tracking the progress.
+- **Deployed App:** [Dream Properties App](https://roomadu-20240341-w2153576.netlify.app)  
+- **GitHub Repository:** [5COSC026C.1-CW2](https://github.com/roomadu/5COSC026C.1-CW2)
 
-## Expanding the ESLint configuration
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+
+## Testing
+
+Automated tests were done using **Jest** and **React Testing Library**.  
+
+**Test Screenshot:**  
+![Jest Test Results](testcase/jest-tests.png)
+
+> All tests are passing.
