@@ -1,10 +1,10 @@
-# My Details
-UoW ID- w2153576
-IIT ID- 20240341
-Name- Koongala Wickrama Roomadu Anjana
+## My Details
+**UoW ID- w2153576**
+**IIT ID- 20240341**
+**Name- Koongala Wickrama Roomadu Anjana**
 
 
-# Dream Properties App
+## Dream Properties App
 Estate Agent Client-side Web Application built using **React, Vite, HTML, CSS, and JavaScript**.  
 
 
@@ -22,4 +22,4 @@ Automated tests were done using **Jest** and **React Testing Library**.
 **Test Screenshot:**  
 ![Jest Test Results](testcase/jest-tests.png)
 
-> All tests are passing.
+> **All tests are passing.**
