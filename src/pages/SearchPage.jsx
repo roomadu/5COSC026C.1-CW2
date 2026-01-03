@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 import PropertyList from "../components/PropertyList.jsx";
 import SearchForm from "../components/SearchForm.jsx";
 import Favourites from "../components/Favourites.jsx";
@@ -16,20 +16,16 @@ function SearchPage() {
     return saved ? JSON.parse(saved) : [];
   });
 
-  // State for live filtering
-  const [searchCriteria, setSearchCriteria] = useState({
-    type: "",
-    minPrice: "",
-    maxPrice: "",
-    minBeds: "",
-    maxBeds: "",
-    postcode: "",
-    dateAdded: ""
-  });
+  const monthMap = {
+    January: "01", February: "02", March: "03", April: "04",
+    May: "05", June: "06", July: "07", August: "08",
+    September: "09", October: "10", November: "11", December: "12"
+  };
 
+  // Initialize properties on mount
   useEffect(() => {
     setProperties(data.properties);
-    setResults(data.properties);
+    setResults(data.properties); // Show all initially
   }, []);
 
   // Save favourites to localStorage
@@ -37,35 +33,30 @@ function SearchPage() {
     localStorage.setItem("favourites", JSON.stringify(favourites));
   }, [favourites]);
 
-  // Map month names to numbers
-  const monthMap = {
-    January: "01", February: "02", March: "03", April: "04",
-    May: "05", June: "06", July: "07", August: "08",
-    September: "09", October: "10", November: "11", December: "12"
-  };
-
-  // Live filter whenever searchCriteria changes
-  useEffect(() => {
+  // Handle Search button click
+  const handleSearch = (criteria) => {
     const filtered = properties.filter((p) => {
-      const matchesType = !searchCriteria.type || p.type === searchCriteria.type;
-      const matchesPrice = (!searchCriteria.minPrice || p.price >= searchCriteria.minPrice) &&
-                           (!searchCriteria.maxPrice || p.price <= searchCriteria.maxPrice);
-      const matchesBeds = (!searchCriteria.minBeds || p.bedrooms >= searchCriteria.minBeds) &&
-                          (!searchCriteria.maxBeds || p.bedrooms <= searchCriteria.maxBeds);
-      const matchesPostcode = !searchCriteria.postcode ||
-        p.location.toLowerCase().includes(searchCriteria.postcode.toLowerCase());
+      const matchesType = !criteria.type || p.type === criteria.type;
+      const matchesPrice =
+        (!criteria.minPrice || p.price >= criteria.minPrice) &&
+        (!criteria.maxPrice || p.price <= criteria.maxPrice);
+      const matchesBeds =
+        (!criteria.minBeds || p.bedrooms >= criteria.minBeds) &&
+        (!criteria.maxBeds || p.bedrooms <= criteria.maxBeds);
+      const matchesPostcode =
+        !criteria.postcode ||
+        p.location.toLowerCase().startsWith(criteria.postcode.toLowerCase());
 
-      const propDate = `${p.added.year}-${monthMap[p.added.month]}-${String(p.added.day).padStart(2,"0")}`;
-      const matchesDate = !searchCriteria.dateAdded || propDate === searchCriteria.dateAdded;
+      const propDate = `${p.added.year}-${monthMap[p.added.month]}-${String(
+        p.added.day
+      ).padStart(2, "0")}`;
+      const matchesDate = !criteria.dateAdded || propDate === criteria.dateAdded;
 
       return matchesType && matchesPrice && matchesBeds && matchesPostcode && matchesDate;
     });
 
     setResults(filtered);
-  }, [searchCriteria, properties]);
-
-  // Update criteria from SearchForm
-  const handleSearch = (criteria) => setSearchCriteria(criteria);
+  };
 
   // Favourites handlers
   const addFavourite = (property) => {
@@ -85,7 +76,7 @@ function SearchPage() {
           <h1 className="search-title">Find Your Perfect Property</h1>
           <div className="search-panels">
             <div className="search-panel">
-              <SearchForm onSearch={handleSearch} values={searchCriteria} />
+              <SearchForm onSearch={handleSearch} />
             </div>
 
             <div className="favourites-panel">
@@ -94,7 +85,7 @@ function SearchPage() {
                 removeFavourite={removeFavourite}
                 clearFavourites={clearFavourites}
                 addFavourite={addFavourite}
-                allProperties={properties} 
+                allProperties={properties}
               />
             </div>
           </div>
