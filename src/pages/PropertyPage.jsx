@@ -1,6 +1,7 @@
 import { useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
 import { Tab, Tabs, TabList, TabPanel } from "react-tabs";
+import { FaHeart } from "react-icons/fa";
 import "react-tabs/style/react-tabs.css";
 import data from "../data/properties.json";
 import Header from "../components/Header.jsx";
@@ -12,42 +13,76 @@ function PropertyPage() {
   const [property, setProperty] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [notFound, setNotFound] = useState(false);
+  const [isFavourite, setIsFavourite] = useState(false);
 
   useEffect(() => {
     const found = data.properties.find((p) => p.id === id);
     if (found) {
       setProperty(found);
       setMainImage(found.images?.[0] || found.picture);
+
+      // Check if already in favourites
+      const savedFavs = JSON.parse(localStorage.getItem("favourites")) || [];
+      setIsFavourite(savedFavs.some(f => f.id === found.id));
+
       setNotFound(false);
     } else {
       setNotFound(true);
     }
   }, [id]);
 
-  if (notFound) return (
-    <>
-      <Header />
-      <div className="property-page">
-        <h2>Property not found</h2>
-        <p>The property you are looking for does not exist.</p>
-      </div>
-      <Footer />
-    </>
-  );
+  if (notFound)
+    return (
+      <>
+        <Header />
+        <div className="property-page">
+          <h2>Property not found</h2>
+          <p>The property you are looking for does not exist.</p>
+        </div>
+        <Footer />
+      </>
+    );
 
-  if (!property) return (
-    <>
-      <Header />
-      <div className="property-page"><p>Loading...</p></div>
-      <Footer />
-    </>
-  );
+  if (!property)
+    return (
+      <>
+        <Header />
+        <div className="property-page">
+          <p>Loading...</p>
+        </div>
+        <Footer />
+      </>
+    );
+
+  // Add/remove favourite and sync with localStorage
+  const handleFavourite = () => {
+    let savedFavs = JSON.parse(localStorage.getItem("favourites")) || [];
+
+    if (isFavourite) {
+      // Remove from favourites
+      savedFavs = savedFavs.filter(f => f.id !== property.id);
+      setIsFavourite(false);
+    } else {
+      // Add to favourites
+      savedFavs.push(property);
+      setIsFavourite(true);
+    }
+
+    localStorage.setItem("favourites", JSON.stringify(savedFavs));
+  };
 
   return (
     <>
       <Header />
       <div className="property-page">
+        {/* Title and price */}
         <h2>{property.type} · £{property.price.toLocaleString()}</h2>
+
+        {/* Favourite button under title */}
+        <button className="fav-button" onClick={handleFavourite}>
+          <FaHeart style={{ color: isFavourite ? "red" : "#41cce7" }} />
+          {isFavourite ? "Remove from Favourites" : "Add to Favourites"}
+        </button>
 
         <Tabs>
           <TabList>
@@ -59,10 +94,10 @@ function PropertyPage() {
 
           <TabPanel>
             <div className="main-image-container">
-              <img 
-                src={mainImage} 
-                alt={`${property.type} main view`} 
-                className="main-image" 
+              <img
+                src={mainImage}
+                alt={`${property.type} main view`}
+                className="main-image"
               />
             </div>
             <div className="thumbnails">
@@ -100,7 +135,7 @@ function PropertyPage() {
               allowFullScreen
               loading="lazy"
               aria-label={`Map showing location of ${property.type}`}
-            ></iframe>
+            />
           </TabPanel>
         </Tabs>
 
@@ -109,7 +144,7 @@ function PropertyPage() {
         <p><strong>Location:</strong> {property.location}</p>
         <p>
           <strong>Added on:</strong>{" "}
-          {property.added 
+          {property.added
             ? `${property.added.day} ${property.added.month}, ${property.added.year}`
             : "N/A"}
         </p>
