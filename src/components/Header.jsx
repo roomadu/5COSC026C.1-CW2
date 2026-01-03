@@ -7,9 +7,7 @@ function Header() {
 
   const scrollToSection = (id) => {
     const section = document.getElementById(id);
-    if (section) {
-      section.scrollIntoView({ behavior: "smooth" });
-    }
+    if (section) section.scrollIntoView({ behavior: "smooth" });
   };
 
   const goToSection = (sectionId) => {
@@ -24,10 +22,9 @@ function Header() {
   return (
     <header className="header">
       <div className="header-left">
-        <img src="/logo.png" alt="Website Logo" />
+        <img src="/logo.png" alt="Dream Properties Logo" />
         <h2>Dream Properties</h2>
       </div>
-
       <nav className="header-nav">
         <button
           className="nav-btn"
