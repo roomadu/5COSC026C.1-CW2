@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://roomadu.github.io/5COSC026C.1-CW2",
+  "homepage": "https://roomadu-20240341-w2153576.netlify.app",
   "scripts": {
     "start": "vite",
     "dev": "vite",
